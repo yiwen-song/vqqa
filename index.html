@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap"
         rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +19,6 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
                         paper: '#faf9f7',
@@ -28,12 +27,10 @@
             }
         }
 
-        // Simple toggle function for the optimized prompts
         function togglePrompt(id) {
             const el = document.getElementById(id);
             if (el.classList.contains('hidden')) {
                 el.classList.remove('hidden');
-                // Small animation effect
                 el.style.opacity = 0;
                 setTimeout(() => el.style.opacity = 1, 10);
             } else {
@@ -61,14 +58,13 @@
 
     <header class="max-w-4xl mx-auto pt-24 pb-12 px-4 text-center">
         <h1
-            class="font-serif text-3xl md:text-4xl tracking-wide leading-tight mb-8 text-gray-900 max-w-3xl mx-auto text-balance">
-            <strong class="font-semibold tracking-normal">
-                <span class="text-[#ff6666]">V</span><span class="text-[#2eb886]">Q</span><span
-                    class="text-[#cda434]">Q</span><span class="text-[#0000a0]">A</span></strong>:
+            class="text-3xl md:text-4xl tracking-tight font-semibold leading-tight mb-8 text-gray-900 max-w-3xl mx-auto text-balance">
+            <span class="text-[#ff6666]">V</span><span class="text-[#2eb886]">Q</span><span
+                class="text-[#cda434]">Q</span><span class="text-[#0000a0]">A</span>:
             An Agentic Approach for Video Evaluation and Quality Improvement
         </h1>
 
-        <div class="flex flex-wrap justify-center gap-8 text-md font-light text-gray-600 mb-3 tracking-wide">
+        <div class="flex flex-wrap justify-center gap-8 text-md font-normal text-gray-600 mb-3">
             <a href="https://yiwen-song.github.io/" target="_blank"
                 class="hover:text-gray-900 transition duration-300 border-b border-transparent hover:border-gray-400 pb-0.5">
                 Yiwen Song<sup class="text-xs ml-0.5 text-gray-400">1</sup>
@@ -83,24 +79,25 @@
             </a>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-6 text-sm font-light text-gray-400 mb-10 tracking-wider">
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-light text-gray-500 mb-10 tracking-wide">
             <span><sup class="text-[10px] mr-0.5">1</sup>Google Cloud AI Research</span>
         </div>
 
         <div class="flex justify-center gap-6 mb-8">
             <a href="https://arxiv.org/abs/2603.12310" target="_blank"
-                class="border border-gray-300 text-gray-600 px-6 py-2 rounded-full text-sm tracking-widest uppercase hover:bg-gray-100 hover:text-gray-900 transition duration-300">arXiv
+                class="border border-gray-300 text-gray-600 px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-gray-100 hover:text-gray-900 transition duration-300">arXiv
                 Paper</a>
         </div>
     </header>
 
     <section class="max-w-5xl mx-auto px-4 mb-24">
-        <div class="bg-white rounded-xl overflow-hidden delicate-shadow border border-gray-100 relative p-2">
-            <img src="vqqa/figures/full_traj_example.png" alt="VQQA Teaser and Pipeline Overview"
-                class="w-full h-auto rounded-lg">
-            <div class="text-center mt-4 mb-2">
-                <span class="text-xs tracking-widest uppercase text-gray-400">Figure 1: Qualitative example of <strong
-                        class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span
+        <div
+            class="bg-white rounded-xl overflow-hidden delicate-shadow border border-gray-100 relative p-2 text-center">
+            <img src="./figures/full_traj_example.png" alt="VQQA Teaser and Pipeline Overview"
+                class="w-[70%] mx-auto h-auto rounded-lg">
+            <div class="mt-4 mb-2">
+                <span class="text-xs tracking-widest uppercase text-gray-500">Figure 1: Qualitative example of <strong
+                        class="font-semibold"><span class="text-[#ff6666]">V</span><span
                             class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
                             class="text-[#0000a0]">A</span></strong> iterative refinement process.</span>
             </div>
@@ -108,61 +105,76 @@
     </section>
 
     <section class="max-w-3xl mx-auto px-4 mb-24">
-        <h2 class="text-xs uppercase tracking-[0.2em] text-gray-400 mb-6 text-center">Abstract</h2>
-        <p class="text-gray-600 leading-loose text-lg text-justify font-light">
-    Despite rapid advancements in video generation models, aligning their outputs with complex user intent remains challenging. Existing test-time optimization methods are typically either computationally expensive or require white-box access to model internals. To address this, we present 
-    <strong class="font-serif italic font-medium text-gray-800">
-        <strong class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span class="text-[#0000a0]">A</span></strong> 
-        (Video Quality Question Answering)</strong>, 
-    a unified, multi-agent framework generalizable across diverse input modalities and video generation tasks. By dynamically generating visual questions and using the resulting Vision-Language Model (VLM) critiques as semantic gradients, 
-    <strong class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span class="text-[#0000a0]">A</span></strong> 
-    replaces traditional, passive evaluation metrics with human-interpretable, actionable feedback. Extensive experiments demonstrate that our method effectively isolates and resolves visual artifacts, substantially improving generation quality. Applicable to both T2V and I2V tasks, our pipeline achieves absolute improvements of <strong>+11.57%</strong> on T2V-CompBench and <strong>+8.43%</strong> on VBench2 over vanilla generation.
-</p>
+        <h2 class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-400 mb-6 text-center">Abstract</h2>
+        <p class="text-gray-600 leading-relaxed text-lg text-justify font-light">
+            Despite rapid advancements in video generation models, aligning their outputs with complex user intent
+            remains challenging. Existing test-time optimization methods are typically either computationally expensive
+            or require white-box access to model internals. To address this, we present
+            <strong class="font-medium text-gray-800">
+                <strong class="font-semibold"><span class="text-[#ff6666]">V</span><span
+                        class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
+                        class="text-[#0000a0]">A</span></strong>
+                (<span class="text-[#ff6666]">V</span>ideo <span class="text-[#2eb886]">Q</span>uality <span
+                    class="text-[#cda434]">Q</span>uestion <span class="text-[#0000a0]">A</span>nswering)
+            </strong>,
+            a unified, multi-agent framework generalizable across diverse input modalities and video generation tasks.
+            By dynamically generating visual questions and using the resulting Vision-Language Model (VLM) critiques as
+            semantic gradients,
+            <strong class="font-semibold"><span class="text-[#ff6666]">V</span><span
+                    class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
+                    class="text-[#0000a0]">A</span></strong>
+            replaces traditional, passive evaluation metrics with human-interpretable, actionable feedback. Extensive
+            experiments demonstrate that our method effectively isolates and resolves visual artifacts, substantially
+            improving generation quality. Applicable to both T2V and I2V tasks, our pipeline achieves absolute
+            improvements of <strong>+11.57%</strong> on T2V-CompBench and <strong>+8.43%</strong> on VBench2 over
+            vanilla generation.
+        </p>
     </section>
 
     <section class="max-w-5xl mx-auto px-4 mb-24">
-        <h2 class="text-xs uppercase tracking-[0.2em] text-gray-400 mb-12 text-center">Visual Comparisons</h2>
+        <h2 class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-400 mb-12 text-center">Visual Comparisons
+        </h2>
 
-        <!-- Example 1 -->
         <div class="mb-20">
             <div class="mb-6 text-center">
-                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2">Original Prompt:</span>
-                <span class="font-serif italic text-gray-700 text-lg">"Three fish swim gracefully in the sea."</span>
+                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2 font-medium">Original Prompt:</span>
+                <span class="italic text-gray-700 text-lg">"Three fish swim gracefully in the sea."</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example1_vanilla.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example1_vanilla.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
-                    <p class="text-xs tracking-widest uppercase text-center text-gray-400">Vanilla Generation</p>
+                    <p class="text-xs tracking-widest uppercase text-center text-gray-500 font-medium">Vanilla
+                        Generation</p>
                 </div>
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example1_vqqa.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example1_vqqa.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center gap-2">
-                            <p class="text-xs tracking-widest uppercase text-center text-gray-600"><strong
-                                    class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span
+                            <p class="text-xs tracking-widest uppercase text-center text-gray-600 font-medium"><strong
+                                    class="font-semibold"><span class="text-[#ff6666]">V</span><span
                                         class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
                                         class="text-[#0000a0]">A</span></strong> Generation</p>
                             <button onclick="togglePrompt('opt1')"
                                 class="text-gray-400 hover:text-gray-800 transition p-1" title="View Optimized Prompt">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0
+9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                 </svg>
                             </button>
                         </div>
                         <div id="opt1"
-                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 font-serif italic transition-opacity duration-300">
+                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 italic transition-opacity duration-300 leading-relaxed">
                             <span
-                                class="font-sans font-medium text-xs tracking-widest uppercase text-gray-400 block mb-1">Optimized
+                                class="font-sans font-semibold text-xs tracking-widest uppercase text-gray-400 block mb-2 not-italic">Optimized
                                 Prompt:</span>
                             "A high-resolution, cinematic underwater video featuring exactly three specific fish: one
                             red Goldfish, one blue Betta, and one yellow Tang. The trio swims gracefully side-by-side in
@@ -179,47 +191,47 @@
 
         <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-12"></div>
 
-        <!-- Example 2 -->
         <div class="mb-20">
             <div class="mb-6 text-center">
-                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2">Original Prompt:</span>
-                <span class="font-serif italic text-gray-700 text-lg">"Violinist and pianist captivate with harmonious
-                    duet performance."</span>
+                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2 font-medium">Original Prompt:</span>
+                <span class="italic text-gray-700 text-lg">"Violinist and pianist captivate with harmonious duet
+                    performance."</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example2_vanilla.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example2_vanilla.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
-                    <p class="text-xs tracking-widest uppercase text-center text-gray-400">Vanilla Generation</p>
+                    <p class="text-xs tracking-widest uppercase text-center text-gray-500 font-medium">Vanilla
+                        Generation</p>
                 </div>
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example2_vqqa.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example2_vqqa.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center gap-2">
-                            <p class="text-xs tracking-widest uppercase text-center text-gray-600"><strong
-                                    class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span
+                            <p class="text-xs tracking-widest uppercase text-center text-gray-600 font-medium"><strong
+                                    class="font-semibold"><span class="text-[#ff6666]">V</span><span
                                         class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
                                         class="text-[#0000a0]">A</span></strong> Generation</p>
                             <button onclick="togglePrompt('opt2')"
                                 class="text-gray-400 hover:text-gray-800 transition p-1" title="View Optimized Prompt">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                 </svg>
                             </button>
                         </div>
                         <div id="opt2"
-                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 font-serif italic transition-opacity duration-300">
+                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 italic transition-opacity duration-300 leading-relaxed">
                             <span
-                                class="font-sans font-medium text-xs tracking-widest uppercase text-gray-400 block mb-1">Optimized
+                                class="font-sans font-semibold text-xs tracking-widest uppercase text-gray-400 block mb-2 not-italic">Optimized
                                 Prompt:</span>
                             "A single, continuous cinematic shot of a harmonious duet on a warm concert stage. On the
                             left, a female musician in a black dress sits and plays a black grand piano. On the right, a
@@ -235,47 +247,47 @@
 
         <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-12"></div>
 
-        <!-- Example 3 -->
         <div class="mb-20">
             <div class="mb-6 text-center">
-                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2">Original Prompt:</span>
-                <span class="font-serif italic text-gray-700 text-lg">"A cuboid balloon drifts past a circular window,
-                    sunlight streaming through the glass panes."</span>
+                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2 font-medium">Original Prompt:</span>
+                <span class="italic text-gray-700 text-lg">"A cuboid balloon drifts past a circular window, sunlight
+                    streaming through the glass panes."</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example3_vanilla.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example3_vanilla.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
-                    <p class="text-xs tracking-widest uppercase text-center text-gray-400">Vanilla Generation</p>
+                    <p class="text-xs tracking-widest uppercase text-center text-gray-500 font-medium">Vanilla
+                        Generation</p>
                 </div>
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example3_vqqa.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example3_vqqa.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center gap-2">
-                            <p class="text-xs tracking-widest uppercase text-center text-gray-600"><strong
-                                    class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span
+                            <p class="text-xs tracking-widest uppercase text-center text-gray-600 font-medium"><strong
+                                    class="font-semibold"><span class="text-[#ff6666]">V</span><span
                                         class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
                                         class="text-[#0000a0]">A</span></strong> Generation</p>
                             <button onclick="togglePrompt('opt3')"
                                 class="text-gray-400 hover:text-gray-800 transition p-1" title="View Optimized Prompt">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                 </svg>
                             </button>
                         </div>
                         <div id="opt3"
-                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 font-serif italic transition-opacity duration-300">
+                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 italic transition-opacity duration-300 leading-relaxed">
                             <span
-                                class="font-sans font-medium text-xs tracking-widest uppercase text-gray-400 block mb-1">Optimized
+                                class="font-sans font-semibold text-xs tracking-widest uppercase text-gray-400 block mb-2 not-italic">Optimized
                                 Prompt:</span>
                             "A red mylar cuboid balloon floats past a circular window with a distinct white wooden
                             frame. The balloon is inflated with visible seam wrinkles and a small hanging string,
@@ -290,46 +302,46 @@
 
         <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-12"></div>
 
-        <!-- Example 4 -->
         <div class="mb-20">
             <div class="mb-6 text-center">
-                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2">Original Prompt:</span>
-                <span class="font-serif italic text-gray-700 text-lg">"A book on the right of a bird."</span>
+                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2 font-medium">Original Prompt:</span>
+                <span class="italic text-gray-700 text-lg">"A book on the right of a bird."</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example4_vanilla.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example4_vanilla.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
-                    <p class="text-xs tracking-widest uppercase text-center text-gray-400">Vanilla Generation</p>
+                    <p class="text-xs tracking-widest uppercase text-center text-gray-500 font-medium">Vanilla
+                        Generation</p>
                 </div>
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example4_vqqa.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example4_vqqa.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center gap-2">
-                            <p class="text-xs tracking-widest uppercase text-center text-gray-600"><strong
-                                    class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span
+                            <p class="text-xs tracking-widest uppercase text-center text-gray-600 font-medium"><strong
+                                    class="font-semibold"><span class="text-[#ff6666]">V</span><span
                                         class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
                                         class="text-[#0000a0]">A</span></strong> Generation</p>
                             <button onclick="togglePrompt('opt4')"
                                 class="text-gray-400 hover:text-gray-800 transition p-1" title="View Optimized Prompt">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                 </svg>
                             </button>
                         </div>
                         <div id="opt4"
-                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 font-serif italic transition-opacity duration-300">
+                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 italic transition-opacity duration-300 leading-relaxed">
                             <span
-                                class="font-sans font-medium text-xs tracking-widest uppercase text-gray-400 block mb-1">Optimized
+                                class="font-sans font-semibold text-xs tracking-widest uppercase text-gray-400 block mb-2 not-italic">Optimized
                                 Prompt:</span>
                             "A high-quality, stable video of a small bird perched calmly on a wooden table. To the
                             immediate right of the bird, a thick hardcover book is resting on the table. The bird is
@@ -343,18 +355,16 @@
 
         <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent my-12"></div>
 
-        <!-- Example 5 -->
         <div class="mb-20">
             <div class="mb-6 text-center">
-                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2">Original Prompt:</span>
-                <span class="font-serif italic text-gray-700 text-lg">"A fluffy pillow drops downward onto the bed,
-                    sinking softly into the duvet."</span>
+                <span class="text-sm tracking-widest text-gray-400 uppercase mr-2 font-medium">Original Prompt:</span>
+                <span class="italic text-gray-700 text-lg">"A snowflake falling softly from the sky."</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example5_vanilla.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example5_vanilla.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
                     <p class="text-xs tracking-widest uppercase text-center text-gray-400">Vanilla Generation</p>
@@ -362,33 +372,33 @@
                 <div class="flex flex-col">
                     <div
                         class="relative w-full aspect-video bg-white delicate-shadow border border-gray-100 p-1.5 rounded-xl mb-4">
-                        <video src="vqqa/videos/example5_vqqa.mp4" autoplay loop muted playsinline
+                        <video src="./videos/example5_vqqa.mp4" autoplay loop muted playsinline
                             class="w-full h-full object-cover rounded-lg"></video>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="flex items-center justify-center gap-2">
-                            <p class="text-xs tracking-widest uppercase text-center text-gray-600"><strong
-                                    class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span
+                            <p class="text-xs tracking-widest uppercase text-center text-gray-600 font-medium"><strong
+                                    class="font-semibold"><span class="text-[#ff6666]">V</span><span
                                         class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
                                         class="text-[#0000a0]">A</span></strong> Generation</p>
                             <button onclick="togglePrompt('opt5')"
                                 class="text-gray-400 hover:text-gray-800 transition p-1" title="View Optimized Prompt">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                 </svg>
                             </button>
                         </div>
                         <div id="opt5"
-                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 font-serif italic transition-opacity duration-300">
+                            class="hidden w-full mt-3 p-4 bg-white border border-gray-100 delicate-shadow rounded-lg text-sm text-gray-600 italic transition-opacity duration-300 leading-relaxed">
                             <span
-                                class="font-sans font-medium text-xs tracking-widest uppercase text-gray-400 block mb-1">Optimized
+                                class="font-sans font-semibold text-xs tracking-widest uppercase text-gray-400 block mb-2 not-italic">Optimized
                                 Prompt:</span>
-                            "A single, defined fluffy pillow falls vertically from the air above onto a bed. The pillow
-                            drops downward with realistic gravity, landing and sinking softly into the plush duvet. The
-                            duvet fabric realistically deforms and indents under the weight of the pillow upon impact.
-                            High quality, 4k, smooth continuous motion, physics-based interaction, no morphing."
+                            "A close-up of a single, intricate snowflake drifting softly through mid-air against a
+                            blurred winter sky. The snowflake remains perfectly intact and crystalline, maintaining its
+                            geometric structure as it floats down slowly. No shattering, no melting, smooth continuous
+                            motion, cinematic lighting, high resolution."
                         </div>
                     </div>
                 </div>
@@ -397,41 +407,45 @@
     </section>
 
     <section class="max-w-4xl mx-auto px-4 mb-24">
-        <h2 class="text-xs uppercase tracking-[0.2em] text-gray-400 mb-10 text-center">Methodology</h2>
+        <h2 class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-400 mb-10 text-center">Methodology</h2>
 
         <div class="w-full bg-white delicate-shadow border border-gray-100 rounded-2xl p-4 mb-10 text-center">
-            <img src="vqqa/figures/vqqa_framework.png" alt="VQQA Architecture Framework"
+            <img src="./figures/vqqa_framework.png" alt="VQQA Architecture Framework"
                 class="w-full max-w-3xl mx-auto h-auto rounded-xl">
-            <p class="text-xs tracking-widest text-gray-400 uppercase mt-4">Figure 2: Multi-Agent <strong
-                    class="font-semibold tracking-normal"><span class="text-[#ff6666]">V</span><span
+            <p class="text-xs tracking-widest text-gray-500 uppercase mt-4">Figure 2: Multi-Agent <strong
+                    class="font-semibold"><span class="text-[#ff6666]">V</span><span
                         class="text-[#2eb886]">Q</span><span class="text-[#cda434]">Q</span><span
                         class="text-[#0000a0]">A</span></strong> Pipeline Overview</p>
         </div>
 
-        <p class="text-gray-600 leading-loose text-lg font-light text-justify md:text-center max-w-3xl mx-auto">
-            <strong class="font-sans font-medium text-gray-800">The <strong class="font-semibold tracking-normal"><span
+        <p class="text-gray-600 leading-relaxed text-lg text-justify md:text-center max-w-3xl mx-auto font-light">
+            <strong class="font-medium text-gray-800">The <strong class="font-semibold"><span
                         class="text-[#ff6666]">V</span><span class="text-[#2eb886]">Q</span><span
                         class="text-[#cda434]">Q</span><span class="text-[#0000a0]">A</span></strong>
-                framework:</strong> Given generation conditions <i class="font-serif text-gray-800">C</i> and a prompt
-            <i class="font-serif text-gray-800">p<sub>t</sub></i>, the model <i class="font-serif text-gray-800">M</i>
-            produces a video <i class="font-serif text-gray-800">v<sub>t</sub></i>. The multi-agent framework uses a
-            <i>Question Generation (QG) agent</i> to formulate visual queries <i class="font-serif text-gray-800">Q</i>
-            and a <i>Question Answering (QA) agent</i> to evaluate the video and produce a score report. These outputs
-            inform the <i>Prompt Refinement (PR) agent</i>, which uses semantic gradients to update the prompt for the
-            next iteration. Finally, a <i>Global VLM Rater</i> assesses the candidate set of generated videos against
-            the original conditions to select the optimal video <i class="font-serif text-gray-800">v<sup>*</sup></i>.
+                framework:</strong> Given generation conditions <i class="italic font-medium text-gray-700">C</i> and a
+            prompt <i class="italic font-medium text-gray-700">p<sub>t</sub></i>, the model <i
+                class="italic font-medium text-gray-700">M</i> produces a video <i
+                class="italic font-medium text-gray-700">v<sub>t</sub></i>. The multi-agent framework uses a <strong
+                class="text-[#ff6666] font-semibold">Question Generation (QG) agent</strong> to formulate visual queries
+            <i class="italic font-medium text-gray-700">Q</i> and a <strong
+                class="text-[#2eb886] font-semibold">Question Answering (QA) agent</strong> to evaluate the video and
+            produce a score report. These outputs inform the <strong class="text-[#cda434] font-semibold">Prompt
+                Refinement (PR) agent</strong>, which uses semantic gradients to update the prompt for the next
+            iteration. Finally, a <strong class="text-[#0000a0] font-semibold">Global VLM Rater</strong> assesses the
+            candidate set of generated videos against the original conditions to select the optimal video <i
+                class="italic font-medium text-gray-700">v<sup>*</sup></i>.
         </p>
     </section>
 
     <section class="max-w-3xl mx-auto px-4 mb-24">
-        <h2 class="text-xs uppercase tracking-[0.2em] text-gray-400 mb-6 text-center">Citation</h2>
+        <h2 class="text-xs uppercase tracking-[0.2em] font-semibold text-gray-400 mb-6 text-center">Citation</h2>
         <div
             class="bg-white delicate-shadow border border-gray-100 p-8 rounded-2xl overflow-x-auto text-sm font-mono text-gray-500 leading-relaxed">
             <pre><code>Coming Soon</code></pre>
         </div>
     </section>
 
-    <footer class="text-gray-400 py-12 text-center text-xs font-light tracking-widest uppercase">
+    <footer class="text-gray-400 py-12 text-center text-xs font-medium tracking-widest uppercase">
         <p>&copy; 2026 The Authors. All rights reserved.</p>
     </footer>
 
